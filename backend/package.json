@@ -1,0 +1,11 @@
+{
+  "name": "@pixelpioneers/backend",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Node.js + Express.js REST API for the On-Demand Skilled Services Platform",
+  "main": "src/server.js",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=20"
+  }
+}
