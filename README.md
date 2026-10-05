@@ -6,7 +6,7 @@
 |---|---|
 | **Team** | PixelPioneers |
 | **Institution** | Sabaragamuwa University of Sri Lanka |
-| **Status** | 🚧 Currently in Phase 1: Repository Initialization & Architecture |
+| **Status** | 🚧 Currently in Phase 2: Core Backend |
 
 ---
 
@@ -41,8 +41,8 @@ Plumbing · Electrical · Carpentry · Masonry · Painting · AC/Refrigeration R
 
 | Application | Folder | Technology | Purpose |
 |---|---|---|---|
-| Customer App | [`customer-app/`](customer-app/) | React Native | Customers describe problems and book providers |
-| Provider App | [`provider-app/`](provider-app/) | React Native | Providers receive and manage job requests |
+| Customer App | [`mobile/customer/`](mobile/customer/) | React Native | Customers describe problems and book providers |
+| Provider App | [`mobile/provider/`](mobile/provider/) | React Native | Providers receive and manage job requests |
 | Admin Dashboard | [`admin-dashboard/`](admin-dashboard/) | React.js | Administrators manage the platform |
 | Backend API | [`backend/`](backend/) | Node.js + Express.js | Central REST API used by all three clients |
 | Database | [`database/`](database/) | PostgreSQL + Sequelize | Migrations and seed data |
@@ -85,34 +85,39 @@ flowchart TD
     API --> S3[AWS S3]
 ```
 
-More detail: [`docs/architecture/system-architecture.md`](docs/architecture/system-architecture.md)
+More detail: [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) · API reference: [`docs/API_SPEC.md`](docs/API_SPEC.md)
 
 ## 7. Repository Structure
 
 ```
 .
-├── customer-app/        # React Native app for customers
-├── provider-app/        # React Native app for service providers
+├── backend/             # Node.js + Express.js REST API            (Member 3)
+├── database/            # Sequelize config, migrations, seeders     (Member 4)
+├── docs/                # ARCHITECTURE.md, API_SPEC.md, decisions   (Member 4)
+├── mobile/
+│   ├── customer/        # React Native customer app (JavaScript)    (Member 1)
+│   └── provider/        # React Native provider app (JavaScript)    (Member 2)
 ├── admin-dashboard/     # React.js web dashboard for administrators
-├── backend/             # Node.js + Express.js REST API
-├── database/            # Sequelize migrations and seeders
-├── docs/                # Architecture docs and decision records
 ├── .gitignore
 └── README.md
 ```
 
-Each application is self-contained with its own `package.json` and is installed and run independently.
+The whole project uses **JavaScript** and **npm**. Each application is self-contained with its own `package.json` and is installed and run independently.
 
 ## 8. Current Development Status
 
-**Currently in Phase 1: Repository Initialization & Architecture**
+**Currently in Phase 2: Core Backend**
 
 - [x] Monorepo folder structure
-- [x] Architecture documentation placeholders
-- [x] Environment variable templates (`.env.example`)
-- [ ] Application features — **not yet implemented**
+- [x] Backend REST API: authentication (JWT + roles), service categories, provider profiles, service request lifecycle, reviews — see [`docs/API_SPEC.md`](docs/API_SPEC.md)
+- [x] Database migrations and category seed data (drafts for Member 4 to review)
+- [ ] Customer and provider mobile apps
+- [ ] Admin dashboard
+- [ ] AI problem classification, nearby search (maps), push notifications, photo uploads, payments
 
-No application features (authentication, AI, matching, bookings, payments, notifications, UI screens) have been implemented yet. They will be built in later phases.
+## Running the Backend
+
+See [`backend/README.md`](backend/README.md).
 
 ## Security Note
 
