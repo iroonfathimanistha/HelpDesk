@@ -1,4 +1,4 @@
-# On-Demand Skilled Services Platform
+# On-Demand Skilled Services Platform Application
 
 > An AI-powered marketplace that helps customers find the right, trusted, nearby skilled professional for household problems.
 
