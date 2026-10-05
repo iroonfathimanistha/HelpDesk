@@ -1,0 +1,22 @@
+{
+  "expo": {
+    "name": "Handy Provider",
+    "slug": "handy-provider",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "backgroundColor": "#f4f7f6"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.pixelpioneers.handyprovider"
+    },
+    "plugins": [
+      "expo-secure-store"
+    ],
+    "scheme": "handyprovider"
+  }
+}
