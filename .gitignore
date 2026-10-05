@@ -19,6 +19,9 @@ GoogleService-Info.plist
 serviceAccountKey*.json
 firebase-adminsdk*.json
 credentials.json
+# Apple signing / push keys
+*.p8
+*.mobileprovision
 
 # ---------- Node.js ----------
 node_modules/
@@ -53,6 +56,8 @@ web-build/
 expo-env.d.ts
 .metro-health-check*
 *.jsbundle
+*.orig.*
+.kotlin/
 
 # Android
 android/app/build/
@@ -103,6 +108,8 @@ tmp/
 *.swo
 *~
 *.sublime-workspace
+# Claude Code personal settings
+.claude/settings.local.json
 
 # ---------- OS-generated files ----------
 .DS_Store
